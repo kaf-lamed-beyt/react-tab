@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface headerProps {
+interface themeProp {
   color?: string;
 }
 
-export const Header = styled.header<headerProps>`
+export const Header = styled.header<themeProp>`
   width: 100%;
 
   ul {
@@ -38,5 +38,16 @@ export const Header = styled.header<headerProps>`
     bottom: 0;
     display: block;
     background-color: ${({ color }) => (color ? color : "red")};
+  }
+
+  @media only screen and (min-width: 0px) and (max-width: 992px) {
+    max-width: 100%;
+    overflow: auto;
+
+    ul {
+      li {
+        white-space: nowrap;
+      }
+    }
   }
 `;
