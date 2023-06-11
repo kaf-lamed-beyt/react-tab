@@ -1,18 +1,12 @@
 import React from "react";
-import { TabHeader } from "../packages";
-
-const items = [
-  { name: "First tab" },
-  { name: "second tab" },
-  { name: "third tab" },
-];
+import { Tab } from "../packages/";
 
 export default function PlayGround() {
   return (
     <>
       <div>
         <h1>Hello playground</h1>
-        <TabHeader tabItems={items} />
+        <Tab />
       </div>
     </>
   );

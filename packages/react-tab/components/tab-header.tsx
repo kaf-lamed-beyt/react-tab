@@ -3,8 +3,8 @@ import React from "react";
 import { Header } from "./style/header.styled";
 
 interface tabHeaderProps {
-  tabItems: [] | null;
-  components: React.ReactElement;
+  tabItems: { name: string }[] | null;
+  components: () => void;
   style: React.CSSProperties;
 }
 
@@ -17,19 +17,23 @@ const TabHeader = ({ tabItems, components, style }: tabHeaderProps) => {
     components ? components(index) : null;
   };
 
-  //   React.useEffect(() => {
-  //     const { query } = router;
-  //     const { tab } = query;
+  React.useEffect(() => {
+    const { query } = router;
+    const { tab } = query;
+    let activeTabIndex;
 
-  //     const decodedTabName =
-  //       typeof tab === "string" && tab && tab.match(/-/g)
-  //         ? tab.split("-").join(" ")
-  //         : tab;
+    const decodedTabName =
+      typeof tab === "string" && tab && tab.match(/-/g)
+        ? tab.split("-").join(" ")
+        : tab;
 
-  //     const tabNames = tabItems.map(({ slug }) => slug);
-  //     const activeTabIndex = tabNames.indexOf(decodedTabName);
-  //     setActiveTab(activeTabIndex);
-  //   }, [activeTab]);
+    const tabNames = tabItems.map(({ name }) => name);
+
+    if (tabNames.includes(decodedTabName)) {
+      activeTabIndex = tabNames.indexOf(decodedTabName);
+      setActiveTab(activeTabIndex);
+    }
+  }, [router.query.tab]);
 
   return (
     <Header style={style}>

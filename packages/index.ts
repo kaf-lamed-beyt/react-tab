@@ -1,3 +1,3 @@
-import TabHeader from "@react-tab/components/tab-header";
+import Tab from "./react-tab";
 
-export { TabHeader };
+export { Tab };
