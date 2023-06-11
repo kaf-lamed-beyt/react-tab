@@ -1,39 +1,60 @@
 import React from "react";
-import { Tab } from "../packages/";
-
+import { data } from "../data";
+import { Tab } from "../packages";
 import styled from "styled-components";
 
 const PlaygroundWrapper = styled.main`
-  padding: 10px 70px;
+  padding: 10px 120px;
+
+  .playground-main {
+    text-align: center;
+
+    h1 {
+      font-weight: 900;
+      font-size: 60px;
+      margin-bottom: 80px;
+    }
+
+    span {
+      color: gray;
+    }
+
+    p {
+      margin-top: -70px;
+      margin-bottom: 90px;
+      font-size: 25px;
+    }
+  }
+
+  .title {
+    font-weight: 900;
+    font-size: 50px;
+  }
+
+  p {
+    margin-top: -15px;
+    color: gray;
+    font-size: 18px;
+    line-height: 25px;
+  }
 
   @media only screen and (min-width: 0px) and (max-width: 992px) {
     padding: 0;
   }
 `;
 
-const Component = ({ text }) => <h1>{text}</h1>;
-
-const data = [
-  {
-    name: "first tab",
-    component: <Component text="Component One" />,
-  },
-  {
-    name: "second tab",
-    component: <Component text="Component Two" />,
-  },
-  {
-    name: "third tab",
-    component: <Component text="Component Three" />,
-  },
-];
-
 export default function PlayGround() {
   return (
     <>
-      <h1>Hello playground</h1>
       <PlaygroundWrapper>
-        <Tab tabItems={data} />
+        <div className="playground-main">
+          <h1>
+            Hello <span>@react-tab</span> playground
+          </h1>
+          <p>state-aware tab components in react</p>
+        </div>
+
+        <Tab tabItems={data} theme="gray" />
       </PlaygroundWrapper>
     </>
   );
