@@ -4,8 +4,8 @@ import { Header } from "./style/header.styled";
 
 interface tabHeaderProps {
   tabItems: { name: string }[] | null;
-  components: () => void;
-  style: React.CSSProperties;
+  components: (index: number) => void;
+  style?: string;
 }
 
 const TabHeader = ({ tabItems, components, style }: tabHeaderProps) => {
@@ -22,7 +22,8 @@ const TabHeader = ({ tabItems, components, style }: tabHeaderProps) => {
     const { tab } = query;
     let activeTabIndex;
 
-    const decodedTabName =
+    // @ts-ignore
+    const decodedTabName: string =
       typeof tab === "string" && tab && tab.match(/-/g)
         ? tab.split("-").join(" ")
         : tab;
@@ -36,7 +37,7 @@ const TabHeader = ({ tabItems, components, style }: tabHeaderProps) => {
   }, [router.query.tab]);
 
   return (
-    <Header style={style}>
+    <Header color={style}>
       <ul>
         {tabItems.map(({ name }, index) => {
           return (

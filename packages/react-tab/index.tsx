@@ -3,23 +3,20 @@ import React from "react";
 import { Container } from "./components/style/content.styled";
 import TabHeader from "./components/tab-header";
 
-const Component = ({ text }) => <h1>{text}</h1>;
+interface tabProps {
+  tabItems: { name: string; component: React.ReactNode }[] | null;
+  theme?: string;
+}
 
-const items = [
-  { name: "first tab", component: <Component text="Component One" /> },
-  { name: "second tab", component: <Component text="Component Two" /> },
-  { name: "third tab", component: <Component text="Component Three" /> },
-];
-
-const Tab = () => {
+const Tab = ({ tabItems, theme }: tabProps) => {
   const router = useRouter();
-  const defaultTabContent = items[0].component;
+  const defaultTabContent = tabItems[0].component;
   const [activeTabContent, setActiveTabContent] =
     React.useState(defaultTabContent);
 
   const handleActiveTabContent = (index) => {
-    const tabContentName = items[index].name;
-    const tabContent = items[index].component;
+    const tabContentName = tabItems[index].name;
+    const tabContent = tabItems[index].component;
     setActiveTabContent(tabContent);
 
     const encodedTabName =
@@ -34,13 +31,14 @@ const Tab = () => {
     } = router;
     let activeTabIndex;
 
-    const decodedTab =
+    // @ts-ignore
+    const decodedTab: string =
       typeof tab === "string" && tab && tab.match(/-/g)
         ? tab.split("-").join(" ")
         : tab;
 
-    const tabNames = items.map(({ name }) => name);
-    const tabComponents = items.map(({ component }) => component);
+    const tabNames = tabItems.map(({ name }) => name);
+    const tabComponents = tabItems.map(({ component }) => component);
 
     if (tabNames.includes(decodedTab, 0)) {
       activeTabIndex = tabNames.indexOf(decodedTab);
@@ -50,7 +48,11 @@ const Tab = () => {
 
   return (
     <>
-      <TabHeader tabItems={items} components={handleActiveTabContent} />
+      <TabHeader
+        style={theme}
+        tabItems={tabItems}
+        components={handleActiveTabContent}
+      />
       <Container>{activeTabContent}</Container>
     </>
   );

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Header = styled.header`
+interface headerProps {
+  color?: string;
+}
+
+export const Header = styled.header<headerProps>`
   width: 100%;
 
   ul {
@@ -22,7 +26,7 @@ export const Header = styled.header`
   }
 
   .active {
-    color: red;
+    color: ${({ color }) => (color ? color : "red")};
   }
 
   .active:before {
@@ -33,6 +37,6 @@ export const Header = styled.header`
     top: 100%;
     bottom: 0;
     display: block;
-    background-color: red;
+    background-color: ${({ color }) => (color ? color : "red")};
   }
 `;
