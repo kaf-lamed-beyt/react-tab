@@ -15,15 +15,15 @@ const Component = ({ text }) => <h1>{text}</h1>;
 
 const data = [
   {
-    name: "first tab gogososos eee",
+    name: "first tab",
     component: <Component text="Component One" />,
   },
   {
-    name: "second tab bgetaa dadd",
+    name: "second tab",
     component: <Component text="Component Two" />,
   },
   {
-    name: "third tab sultra uno",
+    name: "third tab",
     component: <Component text="Component Three" />,
   },
 ];

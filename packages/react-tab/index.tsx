@@ -21,7 +21,7 @@ const Tab = ({ tabItems, theme }: tabProps) => {
 
     const encodedTabName =
       encodeURIComponent(tabContentName).toLocaleLowerCase();
-    const replaceEncodingParam = encodedTabName.replace("%20", "-");
+    const replaceEncodingParam = encodedTabName.split("%20").join("-");
     router.replace(`?tab=${replaceEncodingParam}`);
   };
 
