@@ -4,4 +4,5 @@ node_modules
 next-env.d.ts
 CONTRIBUTING.md
 data.tsx
+packages/react-tab
 packages/chakra-tab
