@@ -75,6 +75,12 @@ Because you might wan to customize the look and feel of `tabHeader`. react-tab e
 - you can copy the link in the URL share it and the state is shared across devices
 - I can't remember the last one....
 
+## setbacks
+
+Because, the component uses `next/router` when you try using it outside of a Next.js project, you'll get an error indicating that "NextRouter is not mounted".
+
+Support for react projects with Next.js should be up soon.
+
 ## Want to contribute?
 
 See the [CONTRIBUTING](CONTRIBUTING) guide.

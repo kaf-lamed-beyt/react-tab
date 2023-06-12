@@ -2832,9 +2832,9 @@ react-style-singleton@^2.2.1:
     invariant "^2.2.4"
     tslib "^2.0.0"
 
-"react-tab@file:":
-  version "1.0.0"
-  resolved "file:"
+"react-tab-state@file:../../../../../../usr/local/lib/node_modules/react-tab-state":
+  version "0.0.1"
+  resolved "file:../../../../../../usr/local/lib/node_modules/react-tab-state"
   dependencies:
     "@chakra-ui/react" "^2.7.0"
     "@emotion/react" "^11.11.1"
@@ -2845,7 +2845,6 @@ react-style-singleton@^2.2.1:
     next "^13.4.5"
     react "^18.2.0"
     react-dom "^18.2.0"
-    react-tab "file:"
     styled-components "^6.0.0-rc.3"
     typescript "^5.1.3"
 

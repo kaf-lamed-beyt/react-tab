@@ -1,6 +1,6 @@
 import React from "react";
 import { data } from "../data";
-import { Tab } from "../packages";
+import { Tab } from "react-tab";
 import {
   PlaygroundWrapper,
   Components,
