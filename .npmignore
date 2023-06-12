@@ -1,0 +1,8 @@
+pages
+node_modules
+.next
+dist
+next-env.d.ts
+CONTRIBUTING.md
+data.tsx
+packages/chakra-tab

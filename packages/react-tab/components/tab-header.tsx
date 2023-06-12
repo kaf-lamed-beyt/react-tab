@@ -12,7 +12,7 @@ const TabHeader = ({ tabItems, components, style }: tabHeaderProps) => {
   const router = useRouter();
   const [activeTab, setActiveTab] = React.useState(0);
 
-  const handleTabClick = (index) => {
+  const handleTabClick = (index: number) => {
     setActiveTab(index);
     components ? components(index) : null;
   };
@@ -28,9 +28,9 @@ const TabHeader = ({ tabItems, components, style }: tabHeaderProps) => {
         ? tab.split("-").join(" ")
         : tab;
 
-    const tabNames = tabItems.map(({ name }) => name);
+    const tabNames = tabItems && tabItems.map(({ name }) => name);
 
-    if (tabNames.includes(decodedTabName)) {
+    if (tabNames && tabNames.includes(decodedTabName)) {
       activeTabIndex = tabNames.indexOf(decodedTabName);
       setActiveTab(activeTabIndex);
     }
@@ -39,7 +39,7 @@ const TabHeader = ({ tabItems, components, style }: tabHeaderProps) => {
   return (
     <Header color={style}>
       <ul>
-        {tabItems.map(({ name }, index) => {
+        {tabItems?.map(({ name }, index) => {
           return (
             <li
               className={

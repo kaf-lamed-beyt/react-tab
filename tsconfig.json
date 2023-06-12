@@ -1,25 +1,29 @@
 {
+  "include": ["packages"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "incremental": true,
-    "esModuleInterop": true,
-    "module": "esnext",
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "sourceMap": true,
+    "importHelpers": true,
+    "declaration": true,
+    "rootDir": "./src",
+    "outDir": "./dist/esm",
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": "./",
     "paths": {
       "@packages/*": ["./packages/*"],
       "@react-tab/*": ["./packages/react-tab/*"],
       "@chakra-tab/*": ["./packages/chakra-tab/*"]
     }
-  },
-  "include": ["packages"],
-  "exclude": ["node_modules"]
+  }
 }

@@ -10,16 +10,17 @@ interface tabProps {
 
 const Tab = ({ tabItems, theme }: tabProps) => {
   const router = useRouter();
-  const defaultTabContent = tabItems[0].component;
+  const defaultTabContent = tabItems && tabItems[0].component;
   const [activeTabContent, setActiveTabContent] =
     React.useState(defaultTabContent);
 
-  const handleActiveTabContent = (index) => {
-    const tabContentName = tabItems[index].name;
-    const tabContent = tabItems[index].component;
+  const handleActiveTabContent = (index: number) => {
+    const tabContentName = tabItems && tabItems[index].name;
+    const tabContent = tabItems && tabItems[index].component;
     setActiveTabContent(tabContent);
 
-    const encodedTabName =
+    const encodedTabName: string =
+      // @ts-ignore
       encodeURIComponent(tabContentName).toLocaleLowerCase();
     const replaceEncodingParam = encodedTabName.split("%20").join("-");
     router.replace(`?tab=${replaceEncodingParam}`);
@@ -37,12 +38,12 @@ const Tab = ({ tabItems, theme }: tabProps) => {
         ? tab.split("-").join(" ")
         : tab;
 
-    const tabNames = tabItems.map(({ name }) => name);
-    const tabComponents = tabItems.map(({ component }) => component);
+    const tabNames = tabItems?.map(({ name }) => name);
+    const tabComponents = tabItems?.map(({ component }) => component);
 
-    if (tabNames.includes(decodedTab, 0)) {
-      activeTabIndex = tabNames.indexOf(decodedTab);
-      setActiveTabContent(tabComponents[activeTabIndex]);
+    if (tabNames?.includes(decodedTab, 0)) {
+      activeTabIndex = tabNames?.indexOf(decodedTab);
+      setActiveTabContent(tabComponents && tabComponents[activeTabIndex]);
     }
   }, [router.query.tab, router.pathname]);
 

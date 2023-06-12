@@ -1,2 +1,4 @@
 node_modules
 .next
+dist
+next-env.d.ts

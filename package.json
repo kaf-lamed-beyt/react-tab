@@ -1,12 +1,16 @@
 {
-  "name": "react-tab",
-  "version": "1.0.0",
+  "name": "react-tab-state",
+  "version": "0.0.1",
   "description": "state-aware tab components in react",
-  "main": "dist/index.js",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
-    "build": "tsc"
+    "build:esm": "tsc",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs"
   },
   "repository": {
     "type": "git",
