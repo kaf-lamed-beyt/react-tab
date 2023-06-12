@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import React from "react";
-import { Container } from "./components/style/content.styled";
 import TabHeader from "./components/tab-header";
 
 type tabProps = {
@@ -54,7 +53,7 @@ const Tab = ({ tabItems, theme }: tabProps) => {
         tabItems={tabItems}
         components={handleActiveTabContent}
       />
-      <Container>{activeTabContent}</Container>
+      {activeTabContent}
     </>
   );
 };
