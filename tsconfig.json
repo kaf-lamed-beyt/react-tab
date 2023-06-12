@@ -7,7 +7,7 @@
     "sourceMap": true,
     "importHelpers": true,
     "declaration": true,
-    "rootDir": "./src",
+    "rootDir": "packages",
     "outDir": "./dist/esm",
     "strict": true,
     "noImplicitReturns": true,

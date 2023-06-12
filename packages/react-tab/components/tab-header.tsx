@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { Header } from "./style/header.styled";
 
-interface tabHeaderProps {
+type tabHeaderProps {
   tabItems: { name: string }[] | null;
   components: (index: number) => void;
   style?: string;
