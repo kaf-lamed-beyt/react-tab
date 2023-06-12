@@ -18,7 +18,7 @@ The browser URL can be used as a global state store which we'll use to keep the 
 
 Currently, react-tab has support for barebones react projects &mdash; that do not depend on a component UI library like Chakra UI etc. &mdash;
 
-Support for chakra-ui is going on though. It should be live soon &mdash; or never. it all depends on the bandwidth i can give to it :sad:
+Support for chakra-ui is going on though. It should be live soon &mdash; or never. it all depends on the bandwidth i can give to it 🥲
 
 To use the component, you can install it with your preferred package manager. The command below ascertains that.
 
