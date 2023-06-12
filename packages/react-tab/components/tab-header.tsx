@@ -2,11 +2,11 @@ import { useRouter } from "next/router";
 import React from "react";
 import { Header } from "./style/header.styled";
 
-type tabHeaderProps {
+type tabHeaderProps = {
   tabItems: { name: string }[] | null;
   components: (index: number) => void;
   style?: string;
-}
+};
 
 const TabHeader = ({ tabItems, components, style }: tabHeaderProps) => {
   const router = useRouter();

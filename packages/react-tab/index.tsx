@@ -3,10 +3,10 @@ import React from "react";
 import { Container } from "./components/style/content.styled";
 import TabHeader from "./components/tab-header";
 
-type tabProps {
+type tabProps = {
   tabItems: { name: string; component: React.ReactNode }[] | null;
   theme?: string;
-}
+};
 
 const Tab = ({ tabItems, theme }: tabProps) => {
   const router = useRouter();

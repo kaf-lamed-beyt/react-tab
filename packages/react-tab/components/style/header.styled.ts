@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-type themeProp {
+type themeProp = {
   color?: string;
-}
+};
 
 export const Header = styled.header<themeProp>`
   width: 100%;

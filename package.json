@@ -1,6 +1,6 @@
 {
   "name": "react-tab-state",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "state-aware tab components in react",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -45,6 +45,8 @@
   },
   "type": "module",
   "devDependencies": {
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-terser": "^0.4.3",
     "rollup-plugin-babel": "^4.4.0",

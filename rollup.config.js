@@ -3,7 +3,7 @@ import commonjs from "rollup-plugin-commonjs";
 import generatePackageJSON from "rollup-plugin-generate-package-json";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import styles from "rollup-plugin-styles";
-import terser from "@rollup/plugin-terser";
+import { terser } from "rollup-plugin-terser";
 
 const dev = process.env.NODE_ENV !== "production";
 
@@ -21,6 +21,7 @@ export default {
     babel({
       extensions: [".ts", ".tsx"],
       exclude: "node_modules/**",
+      presets: ["@babel/preset-react", "@babel/preset-typescript"],
     }),
     generatePackageJSON({
       outputFolder: "dist",
@@ -29,7 +30,6 @@ export default {
         main: "/dist/index.js",
         peerDependencies: {
           react: "^18.2.0",
-          next: "^13.4.5",
           "styled-components": "^6.0.0-rc.3",
         },
       }),
