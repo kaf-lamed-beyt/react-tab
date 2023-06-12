@@ -14,8 +14,9 @@ export const PlaygroundWrapper = styled.main`
 
     h1 {
       font-weight: 900;
-      font-size: 60px;
+      font-size: 80px;
       margin-bottom: 80px;
+      /* margin-top: 200px; */
     }
 
     span {
@@ -25,7 +26,7 @@ export const PlaygroundWrapper = styled.main`
     p {
       margin-top: -70px;
       margin-bottom: 90px;
-      font-size: 25px;
+      font-size: 35px;
     }
   }
 

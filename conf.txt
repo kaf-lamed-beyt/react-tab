@@ -15,7 +15,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "moduleResolution": "node",
-    "jsx": "preserve",
+    "jsx": "react",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -24,11 +24,6 @@
       "@packages/*": ["./packages/*"],
       "@react-tab/*": ["./packages/react-tab/*"],
       "@chakra-tab/*": ["./packages/chakra-tab/*"]
-    },
-    "allowJs": true,
-    "noEmit": true,
-    "incremental": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true
+    }
   }
 }

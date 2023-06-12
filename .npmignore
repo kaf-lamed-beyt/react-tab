@@ -6,3 +6,4 @@ next-env.d.ts
 CONTRIBUTING.md
 data.tsx
 packages/chakra-tab
+public

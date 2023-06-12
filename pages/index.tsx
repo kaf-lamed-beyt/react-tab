@@ -14,7 +14,7 @@ export default function PlayGround() {
           <h1>
             Hello <span>@react-tab</span> playground
           </h1>
-          <p>state-aware tab components in react</p>
+          <p>tab states on steroids</p>
         </div>
         <Components>
           <div className="react-tab">
