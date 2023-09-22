@@ -1,4 +1,4 @@
-# @react-tab
+# react-tab
 
 state-aware tab components in react built with Next.js router.
 
@@ -10,7 +10,7 @@ With react-tabs, you might not need to write the logic to manage just the active
 
 Say, for example, there are four `tabItems`, you procced to select the second tab item and navigate to another route or you refresh the current page, React re-renders the component and the state is lost, hence the active component goes back to being the first `tabItem`.
 
-This becomes an issue when you're working in large applications, where tiny details &mdash; like preserving the tab state &mdash; that improve the overall UX of your app depends on these side effects.
+This becomes an issue when you're working in large applications, where tiny details &mdash; like preserving the tab state &mdash; that improves the overall UX of your app depends on these side effects.
 
 The browser URL can be used as a global state store which we'll use to keep the state of this component.
 
@@ -49,7 +49,7 @@ export const data = [
 ];
 ```
 
-It should have the `name` and `component` properties in it. The way you chose to structure is completely up to you. But, it is important that you pass an array of objects to the `tabItems` props like so:
+It should have the `name` and `component` properties in it. The way you chose to structure it is completely up to you. But, it is important that you pass an array of objects to the `tabItems` props like so:
 
 ```tsx
 import { Tab } from "react-tab-state";
@@ -79,7 +79,7 @@ Because you might wan to customize the look and feel of `tabHeader`. react-tab e
 
 Because, the component uses `next/router` when you try using it outside of a Next.js project, you'll get an error indicating that "NextRouter is not mounted".
 
-Support for react projects with Next.js should be up soon.
+Support for react projects without Next.js should be up soon.
 
 ## Want to contribute?
 
