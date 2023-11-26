@@ -1,6 +1,6 @@
 # react-tab
 
-state-aware tab components in react built with Next.js router.
+state-aware tab components in react built with Next.js `useRouter()` hook.
 
 ## Why?
 
